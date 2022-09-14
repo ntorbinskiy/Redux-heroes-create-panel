@@ -17,6 +17,12 @@
       "name": "ошибка природы",
       "description": "кирилл ",
       "element": "water"
+    },
+    {
+      "id": "6ad44415-7818-4be1-bc39-1fcead08eedb",
+      "name": "Nikita Torbinskiy",
+      "description": "234",
+      "element": "fire"
     }
   ],
   "filters": [

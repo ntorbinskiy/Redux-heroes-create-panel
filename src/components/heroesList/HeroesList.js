@@ -1,8 +1,7 @@
-import { useHttp } from '../spinner/hooks/http.hook';
-import { useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import { fetchHeroes, heroDeleted } from '../../actions';
+import { heroDeleted } from '../../actions';
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import { createSelector } from 'reselect';
 import Spinner from '../spinner/Spinner';
@@ -30,24 +29,15 @@ const HeroesList = () => {
 	const filteredHeroes = useSelector(filteredHeroesSelector);
 	const heroesLoadingStatus = useSelector(state => state.heroes.heroesLoadingStatus);
 	const dispatch = useDispatch();
-	const { request } = useHttp();
 
-	useEffect(() => {
-		dispatch(fetchHeroes(request))
-		// eslint-disable-next-line
-	}, []);
 
 	// Функция берет id и по нему удаляет ненужного персонажа из store
 	// ТОЛЬКО если запрос на удаление прошел успешно
 	// Отслеживайте цепочку действий actions => reducers
 	const onDelete = useCallback((id) => {
 		// Удаление персонажа по его id
-		request(`http://localhost:3001/heroes/${id}`, "DELETE")
-			.then(data => console.log(data, 'Deleted'))
-			.then(dispatch(heroDeleted(id)))
-			.catch(err => console.log(err));
-		// eslint-disable-next-line  
-	}, [request]);
+		dispatch(heroDeleted(id))
+	}, [dispatch]);
 
 	if (heroesLoadingStatus === "loading") {
 		return <Spinner />;

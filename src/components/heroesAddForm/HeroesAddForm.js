@@ -21,18 +21,13 @@ const HeroesAddForm = () => {
 		// хотел показать вам чуть нагляднее
 		// Генерация id через библиотеку
 		const newHero = {
-			"id": uuidv4(),
-			"name": heroName,
-			"description": heroDescr,
-			"element": heroElement
+			id: uuidv4(),
+			name: heroName,
+			description: heroDescr,
+			element: heroElement
 		}
 
-		// Отправляем данные на сервер в формате JSON
-		// ТОЛЬКО если запрос успешен - отправляем персонажа в store
-		request("http://localhost:3001/heroes", "POST", JSON.stringify(newHero))
-			.then(res => console.log(res, 'Отправка успешна'))
-			.then(dispatch(heroCreated(newHero)))
-			.catch(err => console.log(err));
+		dispatch(heroCreated(newHero))
 
 		// Очищаем форму после отправки
 		setHeroName('');

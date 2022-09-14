@@ -10,7 +10,6 @@ const stringMiddleware = () => (next) => (action) => {
 	}
 	return next(action);
 };
-console.log("da");
 
 // const store = createStore(combineReducers({ heroes, filters }),
 // 	compose(applyMiddleware(ReduxThunk, stringMiddleware), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
