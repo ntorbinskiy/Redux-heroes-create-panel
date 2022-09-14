@@ -1,3 +1,4 @@
+import img from "../../img/unknown-hero.jpg";
 const HeroesListItem = ({ name, description, element, onDelete }) => {
 
 	let elementClassName;
@@ -22,7 +23,7 @@ const HeroesListItem = ({ name, description, element, onDelete }) => {
 	return (
 		<li
 			className={`card flex-row mb-4 shadow-lg text-white ${elementClassName}`}>
-			<img src="http://www.stpaulsteinbach.org/wp-content/uploads/2014/09/unknown-hero.jpg"
+			<img src={img}
 				className="img-fluid w-25 d-inline"
 				alt="unknown hero"
 				style={{ 'objectFit': 'cover' }} />
