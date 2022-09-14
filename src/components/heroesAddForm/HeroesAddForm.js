@@ -1,4 +1,3 @@
-import { useHttp } from '../spinner/hooks/http.hook';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -13,7 +12,6 @@ const HeroesAddForm = () => {
 
 	const { filters, filtersLoadingStatus } = useSelector(state => state.filters);
 	const dispatch = useDispatch();
-	const { request } = useHttp();
 
 	const onSubmitHandler = (e) => {
 		e.preventDefault();
