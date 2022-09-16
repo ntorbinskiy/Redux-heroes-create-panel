@@ -1,5 +1,18 @@
 {
-  "heroes": [],
+  "heroes": [
+    {
+      "id": "1a2d992f-1f36-4245-9dea-f217d8c9eb28",
+      "name": "234234",
+      "description": "234",
+      "element": "water"
+    },
+    {
+      "id": "c5b4a16d-fa9a-497d-8b3a-5fdb303533e8",
+      "name": "Anyutta_my_love_forever",
+      "description": "любить Никиту и готовить пюрешку\nи очень хорошо няшиться",
+      "element": "fire"
+    }
+  ],
   "filters": [
     {
       "name": "all",
